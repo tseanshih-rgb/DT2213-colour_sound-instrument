@@ -1,0 +1,5 @@
+# Install portaudio before pip-installing sounddevice:
+#   brew install portaudio
+opencv-python
+sounddevice
+numpy
