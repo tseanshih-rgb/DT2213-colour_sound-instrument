@@ -7,7 +7,7 @@ Built for **DT2213 DT2213 Musical Communication and Music Technology** at KTH Ro
 
 ## Demo Video
 
-[![Watch Demo](https://youtu.be/CG5qci6kjo8.jpg)](https://youtu.be/CG5qci6kjo8)
+[![Watch Demo](https://img.youtube.com/vi/CG5qci6kjo8/maxresdefault.jpg)](https://youtu.be/CG5qci6kjo8)
 ---
 
 ## How It Works
