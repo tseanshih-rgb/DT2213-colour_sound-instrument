@@ -8,7 +8,7 @@ Built for **DT2213 DT2213 Musical Communication and Music Technology** at KTH Ro
 
 ## How It Works
 
-The app reads your webcam feed and continuously detects which colours are visible on screen. Each colour has a unique synthesized sound designed to match its emotional character — not just a different pitch, but a different timbre, rhythm, and texture. Multiple colours can sound simultaneously, and louder means more of the frame is that colour.
+The app reads your webcam feed and continuously detects which colours are visible on screen. Each colour has a unique synthesized sound designed to match its emotional character, not just a different pitch, but a different timbre, rhythm, and texture. Multiple colours can sound simultaneously, and louder means more of the frame is that colour.
 
 | Colour | Sound Character |
 |--------|----------------|
