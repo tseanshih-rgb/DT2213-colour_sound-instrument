@@ -17,11 +17,9 @@ Audio (sounddevice callback thread, managed by AudioEngine):
 
 Runtime controls
 ----------------
-  Q / ESC       quit
-  UP arrow      raise detection threshold by 1 % (max 50 %)
-  DOWN arrow    lower detection threshold by 1 % (min 1 %)
-
-Arrow-key codes on macOS via cv2.waitKey:  UP = 63232, DOWN = 63233.
+  Q / ESC   quit
+  W         raise detection threshold by 1 % (max 50 %)
+  S         lower detection threshold by 1 % (min 1 %)
 """
 
 import sys
@@ -58,9 +56,10 @@ _LBL_X  = 58   # label text left edge
 _THR_MIN = 1.0
 _THR_MAX = 50.0
 
-# macOS cv2.waitKey codes for arrow keys
-_KEY_UP   = 63232
-_KEY_DOWN = 63233
+# cv2.waitKey returns plain ASCII codes for letter keys — reliable on all platforms.
+# Arrow keys were dropped because cv2.waitKey() mis-encodes them on macOS.
+_KEY_UP   = ord('w')   # W → raise threshold
+_KEY_DOWN = ord('s')   # S → lower threshold
 
 
 # ── per-colour rolling-vote smoother ─────────────────────────────────────────
@@ -128,7 +127,7 @@ def _draw_overlay(
     # ── Threshold HUD (bottom-left, always visible) ──────────────────────────
     # Displayed even when no colours are detected so the user can see the
     # current setting and adjust it.
-    thr_label = f"Threshold: {threshold:.0f}%"
+    thr_label = f"Threshold: {threshold:.0f}%  [W/S]"
     thr_y     = frame_h - 14
     cv2.putText(frame, thr_label, (12, thr_y), _FONT, 0.60,
                 (0, 0, 0), 2, cv2.LINE_AA)            # shadow
@@ -219,9 +218,9 @@ def main() -> None:
             key = cv2.waitKey(1)
             if key == ord('q') or key == 27:      # Q or ESC → quit
                 break
-            elif key == _KEY_UP:                  # UP arrow → stricter threshold
+            elif key == _KEY_UP:                  # W → stricter threshold
                 threshold = min(threshold + 1.0, _THR_MAX)
-            elif key == _KEY_DOWN:                # DOWN arrow → more permissive
+            elif key == _KEY_DOWN:                # S → more permissive
                 threshold = max(threshold - 1.0, _THR_MIN)
 
     finally:
