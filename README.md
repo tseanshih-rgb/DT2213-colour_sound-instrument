@@ -1,8 +1,8 @@
-# 🎨 Colour Sound Instrument
+# Colour Sound Instrument
 
 A real-time colour-to-sound synthesizer that turns your camera into a musical instrument. Point it at any colour and hear it — red roars, blue breathes, purple drifts.
 
-Built for **DT2213 Music Technology** at KTH Royal Institute of Technology.
+Built for **DT2213 DT2213 Musical Communication and Music Technology** at KTH Royal Institute of Technology.
 
 ---
 
